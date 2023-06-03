@@ -87,23 +87,24 @@ const Modal: React.FC<ModalProps> = ({
 								<p className='text-lg font-semibold'>{title}</p>
 							</div>
 							{/*Body Modal */}
-							<div className='p-6 flex-auto'>{body}</div>
+							<div className='p-6 flex-auto relative'>{body}</div>
 							{/*Footer Modal */}
-							<div className='flex flex-col gap-2 p-6'>
-								<div className='flex flex-row items-center gap-4  w-full'>
-								{secondaryAction && secondaryActionLabel && (
-								<Button 
-										outline
-										onClick={handleSecondaryAction}
-										disabled={disabled}
-										label={secondaryActionLabel}
-									/>)}
+							<div className='flex flex-col gap-2 p-6 '>
+								<div className='flex flex-row items-center gap-4  w-full '>
+									{secondaryAction && secondaryActionLabel && (
+									<Button 
+											outline
+											onClick={handleSecondaryAction}
+											disabled={disabled}
+											label={secondaryActionLabel}
+										/>)}
 									<Button 
 										onClick={handleSubmit}
 										disabled={disabled}
 										label={actionLabel}
 									/>
 								</div>
+								{footer}
 							</div>
 						</div>
 					</div>

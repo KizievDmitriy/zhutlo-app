@@ -23,6 +23,7 @@ const Button: React.FC<ButtonProps> = ({label, onClick, disabled, outline, small
 			hover:opacity-80
 			transition
 			w-full
+			relative
 			${outline ? 'bg-white' : 'bg-blue-600'}
 			${outline ? 'border-black' : 'border-blue-600'}
 			${outline ? 'text-black' : 'text-white'}
