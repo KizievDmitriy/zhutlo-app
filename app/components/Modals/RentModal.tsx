@@ -173,7 +173,8 @@ const RentModal = () => {
 					subtitle='Show guests what your place looks like!'
 					center
 				/>
-				<ImageUpload />
+				<ImageUpload 
+				/>
 			</div>			
 		)
 	}
