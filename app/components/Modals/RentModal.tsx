@@ -1,9 +1,9 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import Modal from './Modal';
 import useRentModal from '@/app/hooks/useRentModal';
 
-enum Steps {
+enum STEPS {
 	CATEGORY = 0,
 	LOCATION = 1,
 	INFO = 2,
@@ -12,8 +12,19 @@ enum Steps {
 	PRICE = 5
 }
 
+
+
 const RentModal = () => {
 	const rentModal = useRentModal();
+	const [steps, setSteps] = useState(STEPS.CATEGORY);
+
+	const onBack = () => {
+		setSteps((value) => value - 1);
+	}
+
+	const onNext = () => {
+		setSteps((value) => value + 1);
+	}
 
 	return (
 		<Modal
