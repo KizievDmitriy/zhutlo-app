@@ -1,5 +1,5 @@
 'use client';
-import useCoutries from '@/app/hooks/useCountries';
+import useCountries from '@/app/hooks/useCountries';
 import React from 'react';
 import Select from 'react-select';
 
@@ -18,11 +18,16 @@ interface CountrySelectProps {
 }
 
 const CountrySelect: React.FC<CountrySelectProps> = ({value, onChange}) => {
-	const {getAll} = useCoutries()
+	const {getAll} = useCountries()
 
 	return (
 		<div>
 			<Select 
+				classNames={{
+					control: () => 'p-3 border-2',
+					input: () => 'text-lg',
+					option: () => 'text-lg',
+				}}
 				placeholder='Anywhere'
 				isClearable
 				options={getAll}
@@ -36,7 +41,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({value, onChange}) => {
 				)}
 			/>
 		</div>
-	)
+	) 
 }
 
 export default CountrySelect
