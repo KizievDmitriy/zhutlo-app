@@ -6,6 +6,7 @@ import Heading from '../Heading';
 import { categories } from '../Navbar/Categories';
 import CategoryInput from '../Inputs/CategoryInput';
 import { FieldValues, useForm } from 'react-hook-form';
+import CountrySelect from '../Inputs/CountrySelect';
 
 enum STEPS {
 	CATEGORY = 0,
@@ -83,7 +84,7 @@ const RentModal = () => {
 		<div className='flex flex-col gap-8'>
 			<Heading
 				title='Which of these best describes your place?'
-				subtitle='Pick a category'
+				subtitle='Pick a category!'
 				center
 			/>
 			<div className='grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[50vh] overflow-y-auto'>
@@ -101,11 +102,24 @@ const RentModal = () => {
 		</div>
 	)
 
+	if(step === STEPS.LOCATION){
+			bodyContent = (
+				<div className='flex flex-col gap-8'>
+					<Heading
+						title='Where is your place located?'
+						subtitle='Help guest find you!'
+						center
+					/>
+					<CountrySelect
+					/>
+				</div>
+			)
+	}
 	return (
 		<Modal
 			isOpen={rentModal.isOpen}
 			onClose={rentModal.onClose}
-			onSubmit={rentModal.onClose}
+			onSubmit={onNext}
 			title='Your home'
 			actionLabel = {actionLabel}
 			secondaryActionLabel = {secondaryActionLabel}
