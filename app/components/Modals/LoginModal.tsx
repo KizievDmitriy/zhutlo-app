@@ -124,7 +124,7 @@ const LoginModal = () => {
 
 	return (
 		<Modal
-		  secondaryActionLabel=''
+		  secondaryActionLabel=' '
 			disabled={isLoading}
 			isOpen={loginModal.isOpen}
 			title='Login' 

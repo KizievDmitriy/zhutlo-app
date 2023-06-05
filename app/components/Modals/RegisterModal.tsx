@@ -121,7 +121,7 @@ const RegisterModal = () => {
 
 	return (
 		<Modal
-			secondaryActionLabel=''
+			secondaryActionLabel=' '
 			disabled={isLoading}
 			isOpen={registerModal.isOpen}
 			title='Register' 
