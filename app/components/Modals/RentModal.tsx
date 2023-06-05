@@ -10,6 +10,7 @@ import CountrySelect from '../Inputs/CountrySelect';
 import dynamic from 'next/dynamic';
 import Counter from '../Inputs/Counter';
 import ImageUpload from '../Inputs/ImageUpload';
+import Input from '../Inputs/Input';
 // import Map from '../Map';  not work normaly!!!
 
 enum STEPS {
@@ -26,6 +27,7 @@ enum STEPS {
 const RentModal = () => {
 	const rentModal = useRentModal();
 	const [step, setStep] = useState(STEPS.CATEGORY);
+	const [isLoading, setIsLoading] = useState(false);
 
 	const {
 		register,
@@ -179,6 +181,35 @@ const RentModal = () => {
 					onChange={(value) => setCustomValue('imageSrc', value)}
 				/>
 			</div>			
+		)
+	}
+
+	if(step === STEPS.DESCRIPTION) {
+		bodyContent = (
+			<div className='flex flex-col gap-'>
+					<Heading
+						title='How would you describe your place?'
+						subtitle='Short and sweet works best!'
+						center
+					/>
+					<Input
+						id='title'
+						label='Title'
+						disabled={isLoading}
+						register={register}
+						errors={errors}
+						required
+					/>
+					<hr />
+					<Input
+						id='description'
+						label='Description'
+						disabled={isLoading}
+						register={register}
+						errors={errors}
+						required
+					/>				
+			</div>
 		)
 	}
 
