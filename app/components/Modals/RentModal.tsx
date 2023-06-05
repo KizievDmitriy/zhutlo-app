@@ -55,6 +55,7 @@ const RentModal = () => {
 	const guestCount = watch('guestCount');
   const roomCount = watch('roomCount');
   const bathroomCount = watch('bathroomCount');
+	const imageSrc = watch('imageSrc');
 
 	const Map = useMemo(() => dynamic(() => import('../Map'), {    //dynamic import work(bugFixed)
 		ssr: false
@@ -174,6 +175,8 @@ const RentModal = () => {
 					center
 				/>
 				<ImageUpload 
+					value={imageSrc}
+					onChange={(value) => setCustomValue('imageSrc', value)}
 				/>
 			</div>			
 		)
