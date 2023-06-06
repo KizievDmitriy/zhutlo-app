@@ -6,7 +6,7 @@ import LoginModal from './components/Modals/LoginModal';
 import RentModal from './components/Modals/RentModal';
 import Navbar from './components/Navbar/Navbar';
 import ToasterProvider from './providers/ToasterProvider';
-import { getCurrentUser } from './actions/getCurrentUser';
+import  getCurrentUser  from './actions/getCurrentUser';
 
 
 const font = Nunito({ subsets: ['latin'] });
