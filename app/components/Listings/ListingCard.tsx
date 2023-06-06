@@ -5,6 +5,9 @@ import { Listing, Reservation } from '@prisma/client';
 import { useRouter } from 'next/navigation';
 import React, { useCallback, useMemo } from 'react';
 import { format } from 'date-fns';
+import Image from 'next/image';
+import HeartButton from '../HeartButton';
+import Button from '../Button';
 
 interface ListingCardProps {
 	data: Listing;
@@ -61,7 +64,48 @@ const ListingCard: React.FC<ListingCardProps> = ({
 	},[reservation])
 
 	return (
-		<div>ListingCard</div>
+		<div className='col-span-1  cursor-pointer group'
+			onClick={() => router.push(`/listings/${data.id}`)}
+		>
+			<div className='flex flex-col gap-2 w-full'>
+				<div className='relative aspect-square w-full overflow-hidden rounded-xl'>
+					<Image
+						fill
+						alt='listings'
+						src={data.imageSrc}
+						className='object-cover w-full h-full group-hover:scale-110 transition'
+					/>
+					<div className='absolute top-3 right-3'>
+						<HeartButton 
+							listingId={data.userId}
+							currentUser={currentUser}
+						/>
+					</div>
+				</div>
+				<h3 className='font-semibold text-lg'>
+					{location?.region}, {location?.label}
+				</h3>
+				<p className='font-light text-neutral-500'>
+					{reservationDate || data.category}
+				</p>
+				<div className='flex flex-row items-center gap-1'>
+					<p className='font-semibold '>
+						$ {price}
+					</p>
+					{!reservation && (
+						<p className='font-light text-neutral-500'>/ night</p>
+					)}
+				</div>
+				{onAction && actionLabel && (
+					<Button
+						disabled={disabled}
+						small
+						label={actionLabel}
+						onClick={handleCansel}
+					/>
+				)}
+			</div>
+		</div>
 	)
 }
 
