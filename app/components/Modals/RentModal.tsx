@@ -14,7 +14,6 @@ import Input from '../Inputs/Input';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
-// import Map from '../Map';  not work normaly!!!
 
 enum STEPS {
 	CATEGORY = 0,
@@ -65,7 +64,7 @@ const RentModal = () => {
 
 	const Map = useMemo(() => dynamic(() => import('../Map'), {    //dynamic import work(bugFixed)
 		ssr: false
-	}), [location]);
+	}), []);
 
 	const setCustomValue = (id: string, value: any) => {
 		setValue(id, value, {
