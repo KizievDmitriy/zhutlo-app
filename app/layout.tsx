@@ -10,7 +10,6 @@ import  getCurrentUser  from './actions/getCurrentUser';
 import { Suspense } from 'react';
 import Loading from './loading';
 
-
 const font = Nunito({ subsets: ['latin'] });
 
 export const metadata = {
@@ -27,11 +26,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <ToasterProvider/>
-        <RentModal/>
-        <RegisterModal/>
-        <LoginModal/>
-        <Navbar currentUser={currentUser}/>
+          <ToasterProvider/>
+          <RentModal/>
+          <RegisterModal/>
+          <LoginModal/>
+          <Navbar currentUser={currentUser}/>
         <Suspense fallback={<Loading/>}>
           <div className='pb-20 pt-28'>
             {children}

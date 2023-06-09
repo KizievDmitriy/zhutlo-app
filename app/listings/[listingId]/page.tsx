@@ -17,9 +17,7 @@ const ListingPage = async ({ params }: { params: IParams }) => {
 
 	if (!listing) {
     return (
-      <>
-        <EmptyState />
-      </>
+      <EmptyState />
     );
   }
 	return (

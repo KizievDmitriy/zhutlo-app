@@ -4,6 +4,7 @@ import { SafeUser } from '../types';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import useFavorite from '../hooks/useFavorite';
 
+
 interface HeartButtonProps {
 	listingId: string;
 	currentUser?: SafeUser | null;

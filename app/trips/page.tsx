@@ -8,12 +8,10 @@ const TripsPage = async () => {
 
 	if (!currentUser) {
     return (
-      <>
-        <EmptyState
-          title="Unauthorized"
-          subtitle="Please login"
-        />
-      </>
+      <EmptyState
+        title="Unauthorized"
+        subtitle="Please login"
+      />
     );
   }
 
@@ -21,22 +19,18 @@ const TripsPage = async () => {
 
 	if (reservations.length === 0) {
     return (
-      <>
-        <EmptyState
-          title="No trips found"
-          subtitle="Looks like you havent reserved any trips."
-        />
-      </>
+      <EmptyState
+        title="No trips found"
+        subtitle="Looks like you havent reserved any trips."
+      />
     );
   }
 
   return (
-    <>
-      <TripsClient
-        reservations={reservations}
-        currentUser={currentUser}
-    	/>
-    </>
+    <TripsClient
+      reservations={reservations}
+      currentUser={currentUser}
+    />
   );
 }
 
