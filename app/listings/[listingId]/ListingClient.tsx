@@ -86,7 +86,7 @@ useEffect(() => {
   const disabledDates = useMemo(() => {
     let dates: Date[] = [];
 
-    reservations.forEach((reservation: any) => {
+    reservations.forEach((reservation) => {
       const range = eachDayOfInterval({
         start: new Date(reservation.startDate),
         end: new Date(reservation.endDate)
