@@ -1,5 +1,4 @@
 'use client';
-import useCountries from '@/app/hooks/useCountries';
 import useSearchModal from '@/app/hooks/useSearchModal';
 import React from 'react';
 import {BiSearch} from 'react-icons/bi';
@@ -14,14 +13,11 @@ const Search = () => {
 		>
 			<div className='flex flex-row justify-between items-center'>
 				<div className='text-sm font-semibold px-6'>
-					Searj
-				</div>
-				<div className='hidden sm:block text-sm font-semibold px-6 border-x-[1px] flex-1 text-center'>
-					Sear Weev
+					Search
 				</div>
 				<div className='text-sm pl-6 pr-2 text-gray-600 flex flex-row items-center gap-3'>
 					<div className='hidden sm:block '>
-						Add Guests
+						Add Filters
 					</div>
 					<div className='p-2 rounded-full text-white bg-blue-600'>
 						<BiSearch size={18}/>

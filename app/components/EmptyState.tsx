@@ -12,12 +12,12 @@ interface EmptyStateProps {
 
 const EmptyState: React.FC<EmptyStateProps> = ({
 	title = 'No exact matches', 
-	subtitle = 'Try change orremove filters', 
+	subtitle = 'Try change or remove filters', 
 	showReset
 }) => {
 	const router = useRouter(); 
 	return (
-		<div className='h-[60vh] flex flex-col gap-2 justify-center items-center'>
+		<div className='h-[60vh] flex flex-col gap-2 justify-center items-center pt-9'>
 			<Heading title={title} subtitle={subtitle} center/>
 			<div className='w-48 mt-4'>
 				{showReset && (
