@@ -72,7 +72,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
 						fill
 						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 						alt='listings'
-						src={data.imageSrc}
+						src={!data.imageSrc ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png?20200912122019' : data.imageSrc}
 						className='object-cover w-full h-full group-hover:scale-110 transition'
 					/>
 					<div className='absolute top-3 right-3'>
