@@ -1,5 +1,5 @@
 import  getCurrentUser  from './actions/getCurrentUser';
-import getListings, { IListingsParams } from './actions/getListings';
+import { getListings, IListingsParams } from './actions/getListings';
 import Container from './components/Container';
 import EmptyState from './components/EmptyState';
 import ListingCard from './components/Listings/ListingCard';
@@ -50,3 +50,4 @@ const Home =  async ({ searchParams }: HomeProps) => {
 }
 
 export default Home;
+export const dynamic = 'force-dynamic';

@@ -1,7 +1,6 @@
 import EmptyState from '../components/EmptyState';
 import getCurrentUser from '../actions/getCurrentUser';
-import TripsClient from './PropertiesClient';
-import getListings from '../actions/getListings';
+import {getListings} from '../actions/getListings';
 import PropertiesClient from './PropertiesClient';
 
 const PropertiesPage = async () => {
@@ -28,7 +27,7 @@ const PropertiesPage = async () => {
   }
 
   return (
-    <TripsClient
+    <PropertiesClient
       listings={listings}
       currentUser={currentUser}
     />
