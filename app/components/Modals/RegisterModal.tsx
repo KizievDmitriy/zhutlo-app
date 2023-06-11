@@ -32,7 +32,7 @@ const RegisterModal = () => {
 			password: '',
 		}
 	});
-
+  
 	const onSubmit: SubmitHandler<FieldValues> = (data) => {
 		setIsLoading(true);
 
@@ -66,14 +66,6 @@ const RegisterModal = () => {
 					center
 				/>
 				<Input
-					id='email'
-					label='Email'
-					disabled={isLoading}
-					register={register}
-					errors={errors}
-					required
-				/>
-				<Input
 					id='name'
 					label='Name'
 					disabled={isLoading}
@@ -82,8 +74,16 @@ const RegisterModal = () => {
 					required
 				/>
 				<Input
+					id='email'
+					label='Email'
+					disabled={isLoading}
+					register={register}
+					errors={errors}
+					required
+				/>
+				<Input
 					id='password'
-					type='password'
+					type='Password'
 					label='Password'
 					disabled={isLoading}
 					register={register}
