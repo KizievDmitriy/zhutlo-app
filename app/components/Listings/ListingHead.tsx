@@ -1,5 +1,4 @@
 'use client';
-import React from 'react';
 import Image from "next/image";
 import useCountries from "@/app/hooks/useCountries";
 import { SafeUser } from "@/app/types";
@@ -28,9 +27,9 @@ const ListingHead: React.FC<ListingHeadProps> = ({ title, locationValue, imageSr
       />
       <div className='w-full h-[60vh] overflow-hidden rounded-xl relative'>
         <Image
-          src={imageSrc}
+          src={!imageSrc ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png?20200912122019' : imageSrc}
           fill
-          className="object-cover w-full"
+          className="object-cover w-full h-full bg-slate-300"
           alt="Image"
         />
         <div className='absolute top-5 right-5'>

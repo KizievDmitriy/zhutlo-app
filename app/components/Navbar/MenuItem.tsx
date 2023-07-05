@@ -1,18 +1,18 @@
 'use client';
-import React from 'react';
+import React, { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 
-interface MenuItemProps {
+interface MenuItemProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
 	onClick:() => void;
 	label: string;
 }
 
 const MenuItem: React.FC<MenuItemProps> = ({onClick, label}) => {
 	return (
-		<div 
+		<button 
 		onClick={onClick}
 		className='px-4 py-3 hover:bg-neutral-100 hover:text-blue-500  transition font-semibold'>
 			{label}
-		</div>
+		</button>
 	)
 }
 

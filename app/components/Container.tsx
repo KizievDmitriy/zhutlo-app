@@ -1,4 +1,4 @@
-'useClient';
+
 
 interface ContainerProps {
 	children: React.ReactNode;

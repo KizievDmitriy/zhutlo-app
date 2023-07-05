@@ -1,4 +1,3 @@
-'use client';
 import dynamic from "next/dynamic";
 import { IconType } from "react-icons";
 import useCountries from "@/app/hooks/useCountries";
